@@ -2,9 +2,9 @@
     <transition name="fade">
         <div class="shelf-title" v-show="shelfTitleVisible" :class="{'hide-shadow': isHideShadow}">
             <!-- 清除缓存 -->
-            <div class="shelf-title-btn-wrapper shelf-title-left"  @click="clear">
+            <!-- <div class="shelf-title-btn-wrapper shelf-title-left"  @click="clear">
                 <span class="shelf-title-btn-text">{{$t('shelf.clearCache')}}</span>
-            </div>
+            </div> -->
             <!-- 书架 -->
             <div class="shelf-title-center">
                 <span class="shelf-center-title" :class="{'edit-fontsize': isEditMode}">{{$t('shelf.title')}}</span> 

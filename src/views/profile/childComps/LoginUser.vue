@@ -2,21 +2,42 @@
     <div class="login-user">
         <div class="login-user-name-wrapper">
             <div class="user-img-wrapper">
-                <span class="icon-person"></span>
+                <span class="icon-person" v-if="this.avatar === null || this.avatar === ''"></span>
+                <span class="img-avatar" v-else>
+                    <img :src="this.avatar" alt="">
+                </span>
             </div>
             <div class="user-name-wrapper">
-                <span class="name-text">{{$t('login.visitor')}}</span>
+                <span class="name-text">{{userName}}</span>
             </div>
         </div>
-        <div class="login-user-login-text-wrapper">
+        <div class="login-user-login-text-wrapper" @click="tologin" v-show="!token">
             <div class="login-text">{{$t('login.clickSignIn')}}</div>
             <span class="icon-forward"></span>
         </div>
     </div>
 </template>
 <script>
+import {storeLoginMixin} from 'utils/mixin'
 export default {
    name:'LoginUser',
+   mixins: [storeLoginMixin],
+   computed: {
+       userName() {
+           return this.username === '' ?  this.$t(`login.visitor`) : this.username
+       }
+   },
+   methods: {
+       tologin() {
+           this.$router.push(
+               {
+                   path: '/login'
+               }
+           ),
+           this.setLoginPage(true)
+           console.log(this.token);
+       }
+   }
 }
 </script>
 <style lang="scss" scoped>
@@ -38,6 +59,15 @@ export default {
                 @include center;
                 .icon-person {
                     color: #ccc;
+                }
+                .img-avatar{
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
                 }
             }
             .user-name-wrapper {

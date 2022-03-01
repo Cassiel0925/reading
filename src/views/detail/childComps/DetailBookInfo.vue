@@ -46,6 +46,7 @@ export default {
             }
             .book-info-content-wrapper {
                 flex: 1;
+                width: 70%;
                 padding-left: px2rem(15);
                 box-sizing: border-box;
                 .content-title {
@@ -62,11 +63,13 @@ export default {
                     box-sizing: border-box;
                 }
                 .content-abstract {
+                    display: block;
+                    width: 100%;
                     font-size: px2rem(14);
                     line-height: px2rem(16);
                     color: #999;
                     margin-top: px2rem(8);
-                    @include ellipsis2(3)
+                    @include ellipsis2(5)
                 }
             }
         }

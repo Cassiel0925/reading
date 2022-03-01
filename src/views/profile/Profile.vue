@@ -2,8 +2,7 @@
     <div class="login">
       <!-- 标题 -->
       <nav-bar>
-         <div slot="center" class="login-name-text">{{$t('login.userName')}}</div>
-         <div slot="right" class="login-right-icon">
+         <div slot="right" class="login-right-icon" @click="toSetting">
             <span class="icon-settings"></span>
          </div>
       </nav-bar>
@@ -15,6 +14,7 @@
 import NavBar from 'components/common/navbar/NavBar'
 import LoginUser from './childComps/LoginUser.vue'
 import LoginIndividualCentres from './childComps/LoginIndividualCentres.vue'
+import {storeLoginMixin} from 'utils/mixin'
 
 export default {
    name:'Login',
@@ -22,6 +22,15 @@ export default {
        NavBar,
       LoginUser,
       LoginIndividualCentres
+   },
+   mixins: [storeLoginMixin],
+   methods: {
+       toSetting() {
+           this.$router.push({
+               path: '/setting'
+           })
+           this.setLoginPage(true)
+       }
    }
 }
 </script>

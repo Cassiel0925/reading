@@ -62,10 +62,10 @@ export default {
            
            this.rendition.hooks.content.register(contents => {
                 Promise.all([
-                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/daysOne.css`),
-                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/cabin.css`),
-                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/montserrat.css`),
-                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/tangerine.css`),
+                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZQingFSJW_Xi.css`),
+                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZFWZhuZLSHTJWB.css`),
+                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZFWZhuZGDSMCJW.css`),
+                    contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZJCGFKTK.css`),
                 ])
            })
        },
@@ -99,6 +99,7 @@ export default {
                    this.refreshLocation()
                })
                this.hideTitleAndMenu()
+               this.setFontFamilyVisible(false)
            }
        },
        // 下一页
@@ -108,6 +109,7 @@ export default {
                    this.refreshLocation()
                })
                this.hideTitleAndMenu()
+               this.setFontFamilyVisible(false)
            }
        },
        // 标题栏和菜单栏的显示和隐藏
@@ -178,7 +180,7 @@ export default {
                 })
 
                 this.setNavigation(navItem)
-                // console.log(navItem);
+                console.log(navItem);
             })
        },
 
@@ -274,21 +276,24 @@ export default {
        const books = this.$route.params.fileName.split('|')
        const category = books[0]
        const fileName = books[1]
-       getLocalForage(fileName, (err, blob) => {
-            if(!err && blob) {
-                console.log('find');
-                this.setFileName(books.join('/')).then(() => {
-                    this.initEpub(blob)
-                })
-            } else {
-                console.log('online');
-                this.setFileName(books.join('/')).then(() => {
-                    const url = process.env.VUE_APP_EPUB_URL + '/' + category + '/' + fileName
-                    console.log(url);
-                    this.initEpub(url)
-                })
-            }
+        this.setFileName(books.join('/')).then(() => {
+            const url = process.env.VUE_APP_EPUB_URL + '/' + category + '/' + fileName
+            this.initEpub(url)
         })
+    //    getLocalForage(fileName, (err, blob) => {
+    //         if(!err && blob) {
+    //             console.log('find');
+    //             this.setFileName(books.join('/')).then(() => {
+    //                 this.initEpub(blob)
+    //             })
+    //         } else {
+    //             console.log('online');
+    //             this.setFileName(books.join('/')).then(() => {
+    //                 const url = process.env.VUE_APP_EPUB_URL + '/' + category + '/' + fileName
+    //                 this.initEpub(url)
+    //             })
+    //         }
+    //     })
    }
 }
 </script>

@@ -226,7 +226,16 @@ export default {
        // 3.1 移出书架
        removeSelected() {
            this.shelfSelected.forEach(selected => {
-               this.setShelfList(this.shelfList.filter(book => book !== selected))
+               const book = this.shelfList.map(book => {
+                   if(book.type === 1) {
+                       book = this.shelfList.filter(book => book !== selected)
+                   }
+                   if(book.type === 2 && book.itemList !== 0) {
+                       book.itemList = book.itemList.filter(subBook => subBook !== selected)
+                   }
+                   return book
+               })
+               this.setShelfList(book)
            })
            this.setShelfSelected([])
            this.onComplete()

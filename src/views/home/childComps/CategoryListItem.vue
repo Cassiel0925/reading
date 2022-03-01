@@ -39,7 +39,6 @@ export default {
            return categoryText(index, this)
        },
        showBookCategory() {
-           console.log(getCategoryName(this.categoryData.category));
            this.$router.push({
                path: '/list',
                query: {
@@ -64,13 +63,19 @@ export default {
             box-sizing: border-box;
             .category-item-img {
                 width: 100%;
+                height: px2rem(108);
                 img {
                     width: 100%;
+                    height: 100%;
                 }
             }
             .category-itme-content {
-                margin-top: px2rem(5);
-                .content-title {}
+                margin-top: px2rem(8);
+                .content-title {
+                    display: block;
+                    width: 100%;
+                    @include ellipsis;
+                }
                 .content-author {
                     margin-top: px2rem(3);
                 }

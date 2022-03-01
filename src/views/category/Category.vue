@@ -15,7 +15,7 @@
 import NavBar from 'components/common/navbar/NavBar'
 import CategoriesItem from './childComps/CategoriesItem.vue'
 import {storeShelfMixin} from 'utils/mixin'
-import {home} from 'network/index'
+import {categories} from 'network/index'
 export default {
    name:'Category',
    components: {
@@ -40,8 +40,8 @@ export default {
    },
    methods: {
       getCategory() {
-         home().then(response => {
-            this.categories = response.data.categories
+         categories().then(response => {
+            this.categories = response.data.data
          })
       },
       showCategoryList() {

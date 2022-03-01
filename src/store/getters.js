@@ -25,6 +25,13 @@ const ebook = {
     navigation: state => state.book.navigation,
     isBookmark: state => state.book.isBookmark,
     currentTab: state => state.book.currentTab,
+    // login
+    loginPage: state => state.login.loginPage,
+    avatar: state => state.login.avatar,
+    username: state => state.login.username,
+    loginSuccess: state => state.login.loginSuccess,
+    token: state => state.login.token,
+
 }
 
 export default ebook

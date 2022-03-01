@@ -57,3 +57,33 @@ export function detail(book) {
         }
     })
 }
+
+export function categories() {
+    return axios({
+        method: 'get',
+        url: `${process.env.VUE_APP_BASE_URL}/book/categories`,
+    })
+}
+
+export function login(ruleForm) {
+    return axios({
+        method: 'post',
+        url: `${process.env.VUE_APP_BASE_URL}/login`,
+        params: {
+            phone: ruleForm.phone,
+            password: ruleForm.password
+        }
+    })
+}
+
+export function enroll(ruleForm) {
+    return axios({
+        method: 'post',
+        url: `${process.env.VUE_APP_BASE_URL}/addUser`,
+        params: {
+            username: ruleForm.username,
+            mobile: ruleForm.mobile,
+            enrollPassword: ruleForm.enrollPassword
+        }
+    })
+}

@@ -17,8 +17,14 @@ const Ebook = () =>
     import ('views/ebook/Ebook')
 const EbookReader = () =>
     import ('views/ebook/childComps/EbookReader')
+const Profile = () =>
+    import ('views/profile/Profile')
 const Login = () =>
-    import ('views/login/Login')
+    import ('views/profile/childComps/Login')
+const Enroll = () =>
+    import ('views/profile/childComps/Enroll')
+const Setting = () =>
+    import ('views/profile/childComps/Setting')
 
 Vue.use(VueRouter)
 
@@ -59,8 +65,20 @@ const routes = [{
         }]
     },
     {
+        path: '/profile',
+        component: Profile
+    },
+    {
         path: '/login',
         component: Login
+    },
+    {
+        path: '/enroll',
+        component: Enroll
+    },
+    {
+        path: '/setting',
+        component: Setting
     },
 
 

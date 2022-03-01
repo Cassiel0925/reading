@@ -35,38 +35,38 @@ export default {
           hotSearch: [
             {
               type: 1,
-              text: 'Self-Reported Population Health',
+              text: '目送',
               num: '1.8万'
             },
             {
               type: 1,
-              text: 'Library and Information Sciences',
+              text: '匆匆那年',
               num: '1.1万'
             },
             {
               type: 1,
-              text: 'Global Business Strategy',
+              text: '邓小平时代',
               num: '1.3万'
             },
             {
               type: 1,
-              text: 'Corporate Data Quality',
+              text: '少有人走的路',
               num: '1.0万'
             },
             {
               type: 1,
-              text: 'Verrechnungspreise',
+              text: '明宫奇案',
               num: '3.9万'
             }
           ],
           historySearch: [
             {
               type: 2,
-              text: 'Computer Science'
+              text: '鼠疫'
             },
             {
               type: 2,
-              text: 'Building the Infrastructure for Cloud Security'
+              text: '日瓦格医生'
             },
             {
               type: 2,

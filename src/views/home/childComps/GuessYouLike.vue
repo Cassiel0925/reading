@@ -4,14 +4,14 @@
         <title-bar :leftItem="$t('home.guessYouLike')"
                    :rightItem="$t('home.change')"
                    @itemClick="change"/>
-        <div class="guess-you-like-list">
+        <div class="guess-you-like-list" v-if="guessYouLike && guessYouLike.length > 0">
             <div class="guess-you-like-item"
                  v-for="(item, index) in showData"
                  :key="index"
                  @click="showBookDetail(item)">
                 <!-- 封面 -->
                 <div class="item-img">
-                    <img :src="item.cover" alt="">
+                    <img :src="item.cover" alt="书籍封面图">
                 </div>
                 <!-- 信息 -->
                 <div class="content-wrapper">
@@ -58,7 +58,7 @@ export default {
                return []
            }
            
-       },
+       }
        
    },
    methods: {

@@ -4,7 +4,7 @@
       <transition name="title-move">
          <nav-bar v-show="titleVisible">
             <div class="home-bar-center" slot="center">{{$t('home.title')}}</div>
-            <div class="home-bar-right icon-shake" slot="right"></div>
+            <!-- <div class="home-bar-right icon-shake" slot="right"></div> -->
          </nav-bar>
       </transition>
       <!-- 搜索区域 -->
@@ -22,9 +22,10 @@
               @onScroll="onScroll"
               ref="scroll">
          <!-- banner -->
-         <div class="banner-wrapper">
-            <div class="banner-img" :style="{backgroundImage: `url('${banner}')`}"></div>
-         </div>
+         <home-swiper :banners="banners"></home-swiper>
+         <!-- <div class="banner-wrapper">
+            <div class="banner-img" :style="{backgroundImage: `url('${banner[0]}')`}"></div>
+         </div> -->
          <!-- GuessYouLike -->
          <guess-you-like :guessYouLike="guessYouLike"/>
          <!-- recommend -->
@@ -47,6 +48,7 @@ import Recommend from './childComps/Recommend.vue'
 import Featured from './childComps/Featured.vue'
 import CategoryList from './childComps/CategoryList.vue'
 import HotSearchList from './childComps/HotSearchList.vue'
+import HomeSwiper from './childComps/HomeSwiper.vue'
 
 import {home} from 'network/index'
 import {storeHomeMixin} from 'utils/mixin'
@@ -60,20 +62,21 @@ export default {
       Recommend ,
       Featured,
       CategoryList,
-      HotSearchList 
-
+      HotSearchList,
+      HomeSwiper 
    },
    mixins: [storeHomeMixin],
    data () {
       return {
          scrollTop: 94,
-         banner: null,
-         guessYouLike: null,
-         recommend: null,
-         featured: null,
-         categoryList: null,
+         banners: [],
+         guessYouLike: [],
+         recommend: [],
+         featured: [],
+         categoryList: [],
          titleVisible: true,
-         hotSearchVisible: false
+         hotSearchVisible: false,
+         saveY: 0
       }
    },
    methods: {
@@ -118,15 +121,22 @@ export default {
       home().then(response => {
          if(response && response.status === 200) {
             const data = response.data
-            console.log(response);
             // 获取数据
-            this.banner = data.banner
+            this.banners = data.banner
             this.guessYouLike = data.guessYouLike
             this.recommend = data.recommend
             this.featured = data.featured
             this.categoryList = data.categoryList
          }
       })
+   },
+   // 页面回到首页保存之前的位置
+   activated () {
+      this.$refs.scroll.scrollTo(0,this.saveY)
+      this.$refs.scroll.refresh()
+   },
+   deactivated () {
+      this.saveY = this.offsetY
    }
 }
 </script>

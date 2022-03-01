@@ -11,6 +11,7 @@
         "core-js": "^3.6.5",
         "epubjs": "^0.3.71",
         "localforage": "^1.10.0",
+        "serve": "^13.0.2",
         "vue": "^2.6.11",
         "vue-create-api": "^0.2.3",
         "vue-i18n": "^8.27.0",

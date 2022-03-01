@@ -29,7 +29,7 @@
             <div class="setting-wrapper" v-show="isTitleAndFooterVisible && settingVisible !== -1">
                 <setting-font-size v-show="isTitleAndFooterVisible && settingVisible === 0"/>
                 <setting-theme v-show="isTitleAndFooterVisible && settingVisible === 1"/>
-                <seeting-progress v-show="isTitleAndFooterVisible && settingVisible === 2"/>
+                <setting-progress v-show="isTitleAndFooterVisible && settingVisible === 2"/>
             </div>
         </transition>
         <font-family-popup/>
@@ -43,7 +43,7 @@ import {storeEbookMixin} from 'utils/mixin'
 import SettingFontSize from './childComps/SettingFontSize.vue'
 import FontFamilyPopup from './childComps/FontFamilyPopup.vue'
 import SettingTheme from './childComps/SettingTheme.vue'
-import SeetingProgress from './childComps/SeetingProgress.vue'
+import SettingProgress from './childComps/SettingProgress.vue'
 import EbookSlide from './childComps/EbookSlide.vue'
 
 export default {
@@ -54,7 +54,7 @@ export default {
       SettingFontSize,
       FontFamilyPopup,
       SettingTheme ,
-      SeetingProgress,
+      SettingProgress,
       EbookSlide
     },
    mixins: [storeEbookMixin],

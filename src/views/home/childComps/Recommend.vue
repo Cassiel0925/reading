@@ -1,7 +1,6 @@
 <template>
     <div class="recommend">
-        <title-bar :leftItem="$t('home.recommend')"
-                   :rightItem="$t('home.seeAll')"/>
+        <title-bar :leftItem="$t('home.recommend')"/>
         <!-- list -->
         <div class="recommend-list-wrapper">
             <div class="recommend-list-item"
@@ -51,15 +50,20 @@ export default {
                 box-sizing: border-box;
                 .recommend-img {
                     width: 100%;
+                    height: px2rem(140);
                     img {
                         width: 100%;
+                        height: 100%;
                     }
                 }
                 .recommend-content-wrapper {
                     @include columnCenter;
                     .recommend-title {
+                        display: block;
+                        width: 100%;
                         text-align: center;
-                        margin-top: px2rem(3);
+                        margin-top: px2rem(8);
+                        @include ellipsis;
                     }
                     .recommend-info {
                         margin-top: px2rem(5);

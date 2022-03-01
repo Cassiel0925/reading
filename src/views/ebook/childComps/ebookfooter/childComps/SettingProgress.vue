@@ -25,10 +25,10 @@
                 <span class="icon-forward"></span>
             </div>
         </div>
-        <div class="text-wrapper">
+        <!-- <div class="text-wrapper">
             <span class="progress-section-text">{{getSectionName}}</span>
             <span>({{bookAvailable ? progress + '%' : '加载中…'}})</span>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -36,6 +36,15 @@ import {storeEbookMixin} from 'utils/mixin'
 export default {
    name:'SettingProgress',
    mixins: [storeEbookMixin],
+   computed: {
+       // 获取章节名称
+        // getSectionName() {
+        //     return (this.section > 0 && this.navigation[this.section].label) ? this.navigation[this.section].label : ''
+        // }
+   },
+   watch: {
+       
+   },
    methods: {
        //和enter事件相似
        onProgressChange(progress) {
@@ -77,6 +86,7 @@ export default {
                 this.display(sectionInfo.href)
             }
         },
+        
    }
 }
 </script>
@@ -97,9 +107,10 @@ export default {
         }
         .progress-wrapper {
             width: 100%;
-            height: 100%;
+            height: px2rem(100);
             @include center;
             padding: 0 px2rem(15);
+            margin-top: px2rem(12);
             box-sizing: border-box;
             .progress-icon-wrapper {
                 font-size: px2rem(20);
@@ -123,19 +134,19 @@ export default {
                 }
             }
         }
-        .text-wrapper {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            color: #333;
-            @include center;
-            font-size: px2rem(14);
-            padding: 0 px2rem(15);
-            box-sizing: border-box;
-            .progress-section-text {
-                @include ellipsis;
-            }
-        }
+        // .text-wrapper {
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     color: #333;
+        //     @include center;
+        //     font-size: px2rem(14);
+        //     padding: 0 px2rem(15);
+        //     box-sizing: border-box;
+        //     .progress-section-text {
+        //         @include ellipsis;
+        //     }
+        // }
     }
 </style>

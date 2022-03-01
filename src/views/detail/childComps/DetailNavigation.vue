@@ -6,7 +6,7 @@
                 <span class="loading-text">{{$t(`detail.loading`)}}</span>
             </div>
             <div class="detail-navigation-content"
-                v-for="(item, index) in flatNavigation"
+                v-for="(item, index) in showData"
                 :key="index"
                 v-else>
                 <div class="content-item-text"
@@ -32,6 +32,21 @@ export default {
           marginLeft: (item.deep - 1) * px2rem(20) + 'rem'
         }
       },
+   },
+   computed: {
+       showData() {
+           if(this.flatNavigation.length > 20) {
+               let ell = [
+                   {
+                       deep: 1,
+                       label: '... ...',
+                   }
+               ]
+               return this.flatNavigation.slice(0,20).concat(ell)
+           } else {
+               return this.flatNavigation
+           }
+       }
    }
 }
 </script>

@@ -4,9 +4,9 @@
             <tab-bar-item class="detail-footer-tab-bar-item">
                 <span slot="item-text" @click.stop.prevent="readBook">{{$t('detail.read')}}</span>
             </tab-bar-item>
-            <tab-bar-item class="detail-footer-tab-bar-item">
+            <!-- <tab-bar-item class="detail-footer-tab-bar-item">
                 <span slot="item-text">{{$t('detail.listen')}}</span>
-            </tab-bar-item>
+            </tab-bar-item> -->
             <tab-bar-item class="detail-footer-tab-bar-item">
                 <span slot="item-text" @click.stop.prevent="addOrRemoveShelf">{{inBookShelf ? $t('detail.isAddedToShelf') : $t('detail.addOrRemoveShelf')}}</span>
             </tab-bar-item>

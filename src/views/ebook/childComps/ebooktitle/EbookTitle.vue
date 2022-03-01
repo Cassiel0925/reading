@@ -26,12 +26,16 @@
 </template>
 <script>
 import {storeEbookMixin} from 'utils/mixin'
+import {saveLocation} from 'utils/localStorage'
 export default {
    name:'EbookTitle',
    mixins: [storeEbookMixin],
    methods: {
        back() {
            this.setEbookPage(false)
+           this.setFontFamilyVisible(false)
+           this.setIsTitleAndFooterVisible(false)
+        //    saveLocation(this.fileName, this.section)
            this.$router.go(-1)
        },
        goToShelf() {

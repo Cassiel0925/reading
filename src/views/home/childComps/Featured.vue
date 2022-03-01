@@ -1,7 +1,6 @@
 <template>
     <div class="featured">
         <title-bar :leftItem="titleText"
-                   :rightItem="btnText"
                    v-if="featured && featured.length > 0"/>
         <div class="featured-list-wrapper">
             <div class="featured-list-item"
@@ -66,13 +65,20 @@ export default {
                     }
                 }
                 .featured-item-content {
-                    padding-left: px2rem(5);
-                    .featured-content-title {}
+                    flex: 1;
+                    width: 70%;
+                    box-sizing: border-box;
+                    padding: 0 px2rem(5);
+                    .featured-content-title {
+                        display: block;
+                        width: 100%;
+                        @include ellipsis;
+                    }
                     .featured-content-author {
                         margin-top: px2rem(10);
                     }
                     .featured-content-categorytext {
-                        margin-top: px2rem(3);
+                        margin-top: px2rem(8);
                     }
                 }
             }

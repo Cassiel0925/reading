@@ -62,7 +62,6 @@ export const storeShelfMixin = {
             } else {
                 return this.setShelfList(bookList)
             }
-            console.log(bookList);
         },
         // 获取分类列表的书籍
         getCategoryList(title) {
@@ -124,10 +123,7 @@ export const storeEbookMixin = {
         themeList() {
             return themeList(this)
         },
-        // 获取章节名称
-        getSectionName() {
-            return this.section ? this.navigation[this.section].label : ''
-        }
+
     },
     methods: {
         ...mapActions([
@@ -154,19 +150,19 @@ export const storeEbookMixin = {
         initGlobalStyle() {
             switch (this.defaultTheme) {
                 case 'Default':
-                    addCss(`${process.env.VUE_APP_RES_URL}/theme/defaultTheme.css`)
+                    addCss(`${process.env.VUE_APP_RES_URL}/theme/DefaultTheme.css`)
                     break
                 case 'Eye':
-                    addCss(`${process.env.VUE_APP_RES_URL}/theme/eyeTheme.css`)
+                    addCss(`${process.env.VUE_APP_RES_URL}/theme/EyeTheme.css`)
                     break
                 case 'Gold':
-                    addCss(`${process.env.VUE_APP_RES_URL}/theme/goldTheme.css`)
+                    addCss(`${process.env.VUE_APP_RES_URL}/theme/GoldTheme.css`)
                     break
                 case 'Night':
-                    addCss(`${process.env.VUE_APP_RES_URL}/theme/nightTheme.css`)
+                    addCss(`${process.env.VUE_APP_RES_URL}/theme/NightTheme.css`)
                     break
                 default:
-                    addCss(`${process.env.VUE_APP_RES_URL}/theme/defaultTheme.css`)
+                    addCss(`${process.env.VUE_APP_RES_URL}/theme/DefaultTheme.css`)
                     break
             }
         },
@@ -188,13 +184,10 @@ export const storeEbookMixin = {
         refreshLocation() {
             // 当前进度的对象
             const currentLocation = this.currentBook.rendition.currentLocation()
-            console.log(currentLocation);
             if (currentLocation && currentLocation.start) {
                 const startCfi = currentLocation.start.cfi
                 const progress = this.currentBook.locations.percentageFromCfi(startCfi)
-                console.log(progress);
                 this.setProgress(Math.floor(progress * 100))
-                    // 获取章节名称
                 this.setSection(currentLocation.start.index)
                 saveLocation(this.fileName, startCfi)
 
@@ -222,5 +215,26 @@ export const storeEbookMixin = {
             this.setIsTitleAndFooterVisible(false)
             this.setSettingVisible(-1)
         },
+    }
+}
+
+export const storeLoginMixin = {
+    computed: {
+        ...mapGetters([
+            'loginPage',
+            'avatar',
+            'username',
+            'loginSuccess',
+            'token'
+        ]),
+    },
+    methods: {
+        ...mapActions([
+            'setLoginPage',
+            'setAvatar',
+            'setUsername',
+            'setLoginSuccess',
+            'setToken'
+        ]),
     }
 }

@@ -84,16 +84,19 @@ export default {
      },
      // des
      des() {
-         if(this.abstract) {
-             return this.abstract.substring(0, 100)
-         } else {
-             return ''
-         }
+        //  if(this.abstract) {
+        //      return this.abstract.substring(0, 100)
+        //  } else {
+        //      return ''
+        //  }
+        if(this.bookItem) {
+            return this.bookItem.novel_content.substring(10,150)
+        }
      }
    },
    methods: {
        back() {
-           this.$router.go(-1)
+           this.$router.back()
        },
        // 电子书初始化
        init() {
@@ -110,12 +113,12 @@ export default {
                        this.title = this.bookItem.title
                        this.author = this.bookItem.author
                        // 获取 rootFile 数据
-                       let rootFile = data.rootFile
-                       if(rootFile.startsWith('/')) {
-                           rootFile = rootFile.subString(1, rootFile.length)
-                       }
+                    //    let rootFile = data.rootFile
+                    //    if(rootFile.startsWith('/')) {
+                    //        rootFile = rootFile.subString(1, rootFile.length)
+                    //    }
                        // 根据rootFile 拼接出opf文件路径
-                       this.opf = `${process.env.VUE_APP_EPUB_OPF_URL}/${this.fileName}/${rootFile}`
+                       this.opf = `${process.env.VUE_APP_EPUB_URL}/${this.category}/${this.fileName}.epub`
                        this.parseBook(this.opf)
                    }
                })
@@ -205,17 +208,19 @@ export default {
             background: #fff;
             .try-reading {
                 width: 100%;
-                padding: px2rem(20) px2rem(10) px2rem(15) px2rem(15);
+                // padding: px2rem(20) 0 px2rem(15) px2rem(15);
                 box-sizing: border-box;
                 .title {
                     font-size: px2rem(20);
                     color: #333;
+                    padding: px2rem(20) 0 0 px2rem(15);
                 }
                 .content-list {
                     .loading-text-wrapper {
                         font-size: px2rem(16);
                         color: #333;
                         padding-top: px2rem(15);
+                        padding-left: px2rem(15);
                         box-sizing: border-box;
                     }
                 }

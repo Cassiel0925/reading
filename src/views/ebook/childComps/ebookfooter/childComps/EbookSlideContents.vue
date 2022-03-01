@@ -214,7 +214,7 @@ export default {
                 box-sizing: border-box;
                 .slide-contents-book-title{
                     // 375*0.85=318.75-30=288.72-20=268.75-45=223.75-70=153.75
-                    // width: px2rem(153.75);
+                    width: px2rem(153.75);
                     font-size: px2rem(14);
                     line-height: px2rem(16);
                     @include left;
@@ -223,7 +223,7 @@ export default {
                     }
                 }
                 .slide-contents-book-author{
-                    // width: px2rem(153.75);
+                    width: px2rem(153.75);
                     font-size: px2rem(12);
                     line-height: px2rem(14);
                     margin: px2rem(5);

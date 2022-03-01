@@ -1,5 +1,5 @@
 <template>
-    <div class="main-tab-bar" v-show="!isEditMode && !ebookPage">
+    <div class="main-tab-bar" v-show="!isEditMode && !ebookPage && !loginPage">
         <tab-bar class="main-bar">
             <tab-bar-item path="/home">
                 <i slot="item-icon" class="icon-home"></i>
@@ -16,7 +16,7 @@
                 <i class="icon-shelf" slot="item-icon-active" style="color: rgb(74, 171, 255)"></i>
                 <div slot="item-text">{{$t('shelf.title')}}</div>
             </tab-bar-item>
-            <tab-bar-item path="/login">
+            <tab-bar-item path="/profile">
                 <i class="icon-person" slot="item-icon"></i>
                 <i class="icon-person" slot="item-icon-active" style="color: rgb(74, 171, 255)"></i>
                 <div slot="item-text">{{$t('login.me')}}</div>
@@ -27,14 +27,14 @@
 <script>
 import TabBar from 'components/common/tabbar/TabBar.vue'
 import TabBarItem from 'components/common/tabbar/TabBarItem.vue'
-import {storeShelfMixin} from 'utils/mixin'
+import {storeShelfMixin, storeLoginMixin} from 'utils/mixin'
 export default {
    name:'MainTabBar',
    components: { 
        TabBar,
        TabBarItem,
     },
-    mixins: [storeShelfMixin]
+    mixins: [storeShelfMixin, storeLoginMixin]
 
 }
 </script>

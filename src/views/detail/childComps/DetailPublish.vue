@@ -59,6 +59,7 @@ export default {
                flex: 1;
                font-size: px2rem(14);
                color: #333;
+               @include ellipsis;
             }
          }
       }

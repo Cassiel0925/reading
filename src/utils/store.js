@@ -3,49 +3,32 @@ import { getBookShelf, saveBookShelf } from "./localStorage"
 export function categoryText(category, vue) {
     switch (category) {
         case 1:
-            return vue.$t('category.computerScience')
+            return vue.$t('category.novel')
         case 2:
-            return vue.$t('category.socialSciences')
-        case 3:
-            return vue.$t('category.economics')
-        case 4:
-            return vue.$t('category.education')
-        case 5:
-            return vue.$t('category.engineering')
-        case 6:
-            return vue.$t('category.environment')
-        case 7:
-            return vue.$t('category.geography')
-        case 8:
-            return vue.$t('category.history')
-        case 9:
-            return vue.$t('category.laws')
-        case 10:
-            return vue.$t('category.lifeSciences')
-        case 11:
             return vue.$t('category.literature')
-        case 12:
-            return vue.$t('category.biomedicine')
-        case 13:
-            return vue.$t('category.businessandManagement')
-        case 14:
-            return vue.$t('category.earthSciences')
-        case 15:
-            return vue.$t('category.materialsScience')
-        case 16:
-            return vue.$t('category.mathematics')
-        case 17:
-            return vue.$t('category.medicineAndPublicHealth')
-        case 18:
+        case 3:
             return vue.$t('category.philosophy')
-        case 19:
-            return vue.$t('category.physics')
-        case 20:
-            return vue.$t('category.politicalScienceAndInternationalRelations')
-        case 21:
+        case 4:
+            return vue.$t('category.art')
+        case 5:
+            return vue.$t('category.biography')
+        case 6:
             return vue.$t('category.psychology')
-        case 22:
-            return vue.$t('category.statistics')
+        case 7:
+            return vue.$t('category.prose')
+        case 8:
+            return vue.$t('category.caricature')
+        case 9:
+            return vue.$t('category.history')
+        case 10:
+            return vue.$t('category.science')
+        case 11:
+            return vue.$t('category.workplace')
+        case 12:
+            return vue.$t('category.youth')
+        case 13:
+            return vue.$t('category.drama')
+
     }
 }
 
@@ -53,75 +36,48 @@ export function categoryText(category, vue) {
 export function getCategoryName(id) {
     switch (id) {
         case 1:
-            return 'ComputerScience'
+            return 'novel'
         case 2:
-            return 'SocialSciences'
+            return 'literature'
         case 3:
-            return 'Economics'
+            return 'philosophy'
         case 4:
-            return 'Education'
+            return 'art'
         case 5:
-            return 'Engineering'
+            return 'biography'
         case 6:
-            return 'Environment'
+            return 'psychology'
         case 7:
-            return 'Geography'
+            return 'prose'
         case 8:
-            return 'History'
+            return 'caricature'
         case 9:
-            return 'Laws'
+            return 'history'
         case 10:
-            return 'LifeSciences'
+            return 'science'
         case 11:
-            return 'Literature'
+            return 'workplace'
         case 12:
-            return 'Biomedicine'
+            return 'youth'
         case 13:
-            return 'BusinessandManagement'
-        case 14:
-            return 'EarthSciences'
-        case 15:
-            return 'MaterialsScience'
-        case 16:
-            return 'Mathematics'
-        case 17:
-            return 'MedicineAndPublicHealth'
-        case 18:
-            return 'Philosophy'
-        case 19:
-            return 'Physics'
-        case 20:
-            return 'PoliticalScienceAndInternationalRelations'
-        case 21:
-            return 'Psychology'
-        case 22:
-            return 'Statistics'
+            return 'drama'
     }
 }
 
 export const categoryList = {
-    'ComputerScience': 1,
-    'SocialSciences': 2,
-    'Economics': 3,
-    'Education': 4,
-    'Engineering': 5,
-    'Environment': 6,
-    'Geography': 7,
-    'History': 8,
-    'Laws': 9,
-    'LifeSciences': 10,
-    'Literature': 11,
-    'Biomedicine': 12,
-    'BusinessandManagement': 13,
-    'EarthSciences': 14,
-    'MaterialsScience': 15,
-    'Mathematics': 16,
-    'MedicineAndPublicHealth': 17,
-    'Philosophy': 18,
-    'Physics': 19,
-    'PoliticalScienceAndInternationalRelations': 20,
-    'Psychology': 21,
-    'Statistics': 22
+    'novel': 1,
+    'literature': 2,
+    'philosophy': 3,
+    'art': 4,
+    'biography': 5,
+    'psychology': 6,
+    'prose': 7,
+    'caricature': 8,
+    'history': 9,
+    'science': 10,
+    'workplace': 11,
+    'youth': 12,
+    'drama': 13
 }
 
 // 在最后面加上+

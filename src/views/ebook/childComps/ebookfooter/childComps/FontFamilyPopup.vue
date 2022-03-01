@@ -1,23 +1,22 @@
 <template>
     <transition name="popup-slide-up">
         <div class="font-family-popup" v-show="fontFamilyVisible">
-            <div class="font-family-popup-title-wrapper">
-                <div class="title-icon" @click="hide">
+            <div class="popup-title-wrapper">
+                <div class="popup-title-icon" @click="hide">
                     <span class="icon-down2"></span>
                 </div>
-                <div class="title-text">
+                <div class="popup-title-text">
                     <span class="text">{{$t('book.selectFont')}}</span>
                 </div>
             </div>
-            <div class="font-family-popup-list"
-                 :class="{'is-select': defaultFontFamily === item.font}"
+            <div class="popup-item-list-wrapper"
                  v-for="(item, index) in fontFamily"
                  :key="index"
                  @click="selectFontFamily(item.font)">
-                <div class="item-text">
+                <div class="item-text" :class="{'select': defaultFontFamily === item.font}">
                     {{item.font}}
                 </div>
-                <div class="item-icon" v-if="defaultFontFamily === item.font">
+                <div class="item-check" v-if="defaultFontFamily === item.font" :class="{'select': defaultFontFamily === item.font}">
                     <span class="icon-check"></span>
                 </div>
             </div>
@@ -59,43 +58,48 @@ export default {
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #fff;
+        background-color: #fff;
         box-shadow: 0 px2rem(-6) px2rem(3) rgba(0, 0 , 0, .3);
         z-index: 120;
-        .font-family-popup-title-wrapper {
+        .popup-title-wrapper {
             position: relative;
             padding: px2rem(15);
             box-sizing: border-box;
             border-bottom: px2rem(1) solid #eee;
             text-align: center;
-            .title-icon {
+            .popup-title-icon {
                 position: absolute;
                 left: px2rem(15);
                 height: 100%;
                 font-size: px2rem(16);
                 font-weight: 700;
             }
-            .title-text {
+            .popup-title-text {
                 font-size: px2rem(14);
                 font-weight: 700;
             }
         }
-        .font-family-popup-list {
+        .popup-item-list-wrapper {
             font-size: px2rem(16);
             display: flex;
             padding: px2rem(8);
             box-sizing: border-box;
-            &.is-select {
-                color: rgb(74, 171, 255);
-                font-weight: 700;
-            }
+            
             .item-text {
                 flex: 1;
                 text-align: left;
+                &.select {
+                    color: rgb(74, 171, 255);
+                    font-weight: 700;
+                }
             }
-            .item-icon {
+            .item-check {
                 flex: 1;
                 text-align: right;
+                &.select {
+                    color: rgb(74, 171, 255);
+                    font-weight: 700;
+                }
             }
         }
     }

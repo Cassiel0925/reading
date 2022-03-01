@@ -11,7 +11,7 @@
                      <div class="category-wrapper">
                         <!-- info -->
                         <div class="item-info-wrapper">
-                            <div class="info-title title-medium">{{categoryText(item.category)}}</div>
+                            <div class="info-title title-medium">{{categoryText(item.id)}}</div>
                             <div class="info-num sub-title-tiny">{{$t('home.allBook').replace('$1', item.num)}}</div>
                         </div>
                         <!-- img -->
@@ -48,8 +48,8 @@ export default {
            this.$router.push({
                path: '/list',
                query: {
-                   category: getCategoryName(item.category),
-                   categoryText: this.categoryText(item.category)
+                   category: getCategoryName(item.id),
+                   categoryText: this.categoryText(item.id)
                }
            })
        },
@@ -91,7 +91,7 @@ export default {
                         }
                         .info-num {
                             text-align: center;
-                            margin-top: px2rem(5);
+                            margin-top: px2rem(15);
                         }
                     }
                     .item-img-wrapper {

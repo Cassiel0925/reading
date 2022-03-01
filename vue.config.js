@@ -18,6 +18,12 @@ module.exports = {
                 'utils': '@/utils'
 
             }
+        },
+        performance: {
+            hints: 'warning',
+            maxAssetSize: 524288,
+            maxEntrypointSize: 524288
         }
-    }
+    },
+    publicPath: './'
 }

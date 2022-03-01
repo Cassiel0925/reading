@@ -37,7 +37,8 @@ export default {
                this.$refs.scrollWrapper.style.height = window.innerHeight - realPx(this.top) - realPx(this.bottom) + 'px'
                this.$refs.scrollWrapper.addEventListener('scroll', this.handleScroll)
            } 
-       }
+       },
+      
    },
    mounted() {
        this.refresh()

@@ -15,10 +15,10 @@ export const FONT_SIZE_LIST = [
 // 字体列表
 export const FONT_FAMILY = [
     { font: 'Default' },
-    { font: 'Cabin' },
-    { font: 'Days One' },
-    { font: 'Montserrat' },
-    { font: 'Tangerine' }
+    { font: '仿宋' },
+    { font: '黑体' },
+    { font: '宋体' },
+    { font: '楷体' }
 ]
 
 // 主题列表

@@ -72,6 +72,22 @@ const actions = {
     setCurrentTab: ({ commit }, currentTab) => {
         return commit('SET_CURRENTTAB', currentTab)
     },
+    // login
+    setLoginPage: ({ commit }, loginPage) => {
+        return commit('SET_LOGINPAGE', loginPage)
+    },
+    setAvatar: ({ commit }, avatar) => {
+        return commit('SET_AVATAR', avatar)
+    },
+    setUsername: ({ commit }, username) => {
+        return commit('SET_USERNAME', username)
+    },
+    setLoginSuccess: ({ commit }, loginSuccess) => {
+        return commit('SET_LOGINSUCCESS', loginSuccess)
+    },
+    setToken: ({ commit }, token) => {
+        return commit('SET_TOKEN', token)
+    }
 }
 
 export default actions
