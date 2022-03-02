@@ -180,7 +180,7 @@ export default {
                 })
 
                 this.setNavigation(navItem)
-                console.log(navItem);
+                // console.log(navItem);
             })
        },
 
