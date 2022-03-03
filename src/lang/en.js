@@ -7,7 +7,7 @@ const messages = {
         clear: 'Clear',
         hotSearch: 'Hot Search',
         historySearch: 'History Search',
-        sameAuthor: 'Same author with $1',
+        sameAuthor: 'Author $1 Recommend',
         sameReader: 'Same reader with $1',
         readPercent: '$1 is reading $2',
         recommend: 'Recommend',

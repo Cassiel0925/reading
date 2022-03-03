@@ -62,7 +62,7 @@ export default {
                query: {
                    keyword: this.searchText
                }
-           })
+           }).then(this.searchText = '')
        }
    }
 }

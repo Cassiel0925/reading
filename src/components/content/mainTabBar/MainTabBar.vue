@@ -46,6 +46,7 @@ export default {
         right: 0;
         bottom: 0;
         box-shadow: 0 px2rem(-2) px2rem(2) 0 rgba(100, 100, 100, .1);
+        background-color: #fff;
         .main-bar {
         }
     }

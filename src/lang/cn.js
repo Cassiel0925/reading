@@ -7,7 +7,7 @@ const messages = {
         clear: '清空',
         hotSearch: '热门搜索',
         historySearch: '搜索历史',
-        sameAuthor: '与$1同作者',
+        sameAuthor: '$1作者推荐',
         sameReader: '对$1感兴趣的人也在读',
         readPercent: '阅读$2的人，$1都在读',
         recommend: '热门推荐',

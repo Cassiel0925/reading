@@ -137,6 +137,8 @@ export default {
    },
    deactivated () {
       this.saveY = this.offsetY
+      this.back()
+
    }
 }
 </script>

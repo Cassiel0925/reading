@@ -66,6 +66,10 @@ export default {
                     contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZFWZhuZLSHTJWB.css`),
                     contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZFWZhuZGDSMCJW.css`),
                     contents.addStylesheet(`${process.env.VUE_APP_RES_URL}/fonts/FZJCGFKTK.css`),
+                    // contents.addStylesheet('assets/fonts/FZQingFSJW_Xi.css'),
+                    // contents.addStylesheet('assets/fonts/FZFWZhuZLSHTJWB.css'),
+                    // contents.addStylesheet('assets/fonts/FZFWZhuZGDSMCJW.css'),
+                    // contents.addStylesheet('assets/fonts/FZJCGFKTK.css'),
                 ])
            })
        },
